@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.util.Locale;
 
 public class ContoBancario {
 
@@ -9,8 +11,9 @@ public class ContoBancario {
         this.saldo = 0;
     }
 
-    public float getSaldo(){
-        return this.saldo;
+    public String getSaldo(){
+        DecimalFormat dfItaliano = new DecimalFormat("#,##0.00", new java.text.DecimalFormatSymbols(Locale.ITALY));
+        return dfItaliano.format(this.saldo);
     }
     public int getNconto(){
         return this.nConto;
